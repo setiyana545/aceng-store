@@ -1,22 +1,172 @@
-< lang="en">
+<!DOCTYPE html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce !DOCTYPE html>
-<htmlWebsite</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Tautan ke file CSS eksternal -->
+    <title>Toko Online</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
+        /* HEADER */
+        header {
+            background: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        header .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO */
+        .hero {
+            background: url('https://via.placeholder.com/1200x400') no-repeat center/cover;
+            color: rgb(235, 6, 6);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: orange;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* PRODUK */
+        .produk {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .produk-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 15px;
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .card button {
+            margin-top: 10px;
+            padding: 8px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
+<body>
 
-<section id="new-arrivals">
-            <h2>New Arrivals</h2>
-            <!-- Daftar produk-produk terbaru -->
-            <div class="product">
-                <!-- ... -->
+    <!-- HEADER -->
+    <header>
+        <div class="logo">🛍️ SevenStore.id</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Produk</a>
+            <a href="#">Kategori</a>
+            <a href="#">Keranjang (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Selamat Datang di SevenStore.id</h1>
+        <p>Temukan produk terbaik dengan harga menarik</p>
+        <button>Belanja Sekarang</button>
+    </section>
+
+    <!-- PRODUK UNGGULAN -->
+    <section class="produk">
+        <h2>Produk Unggulan</h2>
+        <div class="produk-container">
+
+            <div class="card">
+                <img src="adidas ice blue.jpg" alt="adidas ice blue">
+                <h3>Adidas Handball Spezial Ice Blue</h3>
+                <p>Rp 2.200.000</p>
+                <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
             </div>
-            <!-- Produk lainnya -->
-            <!-- ... -->
-        </section>
-    </main>
 
+            <div class="card">
+                <img src="adidas indigo navy.jpg" alt="">
+                <h3>Adidas Handball Spezial Night Indigo Navy </h3>
+                <p>Rp 2.200.000</p>
+                <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
+            </div>
 
+            <div class="card">
+                <img src="adidas green.jpg" alt="">
+                <h3>Adidas Handball Spezial Collegiat Green</h3>
+                <p>Rp 2.200.000</p>
+                <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="card">
+                <img src="adidas-bermuda-bliss-lilac-halo-blue-3.jpg" alt="">
+                <h3>adidas Bermuda Bliss Lilac Halo Blue</h3>
+                <p>Rp 1.999.000</p>
+                <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Kontak: SevenStrore@tokoku.com | 0889657436</p>
+        <p>&copy; 2026 SevenStore.id. All rights reserved.</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        let cart = 0;
+
+        function tambahKeranjang() {
+            cart++;
+            document.getElementById("cart-count").innerText = cart;
+            alert("Produk ditambahkan ke keranjang!");
+        }
+    </script>
+
+</body>
+</html>
